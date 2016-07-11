@@ -124,3 +124,15 @@ export default Header;
   padding: 60px 20px 50px 110px
   position: relative
 ```
+
+
+#### set font url
+reference: http://ju.outofmemory.cn/entry/155004
+@import ‘https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin’;
+
+to
+
+@import ‘http://fonts.useso.com/css?family=Lato:400,700,400italic,700italic&subset=latin’;
+cd semantice
+gulp build
+
