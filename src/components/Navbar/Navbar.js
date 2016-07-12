@@ -1,18 +1,27 @@
 import styles from './Navbar.styl';
-import React from 'react';
+import React, {Component} from 'react';
 
-require('semantic/dist/semantic.css');
+import {Link} from 'react-router'
+import {Button, Menu, Menuitem} from 'stardust'
+import  Logo from '../Logo'
 
-const Navbar = () => (
-  <div className={styles.navbar}>
-    <ul>
-      <li><a href="#/">Home</a></li>
-      <li><a href="#/about">About this project</a></li>
-      <li><a href="#/styles">Style framework</a></li>
-      <li><a href="#/blog">Blog</a></li>
-      <button className="ui button"> HELLO</button>
-    </ul>
-  </div>
-);
+class Navbar extends Component {
+
+  render() {
+
+    return (<div className={styles.navbar}>
+      <Menu className="ui five item menu">
+        <Logo/>
+        <Link className="item"  to="/">Home</Link>
+        <Link className="item" to="mysurvey">My Survey</Link>
+        <Link className="item" to="styles">Style framework</Link>
+        <span >  </span>
+        <Link className="item" to="blog">Login Out</Link>
+      </Menu>
+    </div>);
+
+  }
+
+}
 
 export default Navbar;

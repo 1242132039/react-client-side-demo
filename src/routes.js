@@ -1,6 +1,6 @@
 import React from 'react';
 import { IndexRoute, Route } from 'react-router';
-import { App, Home, About, NotFound, StyleScoping } from './containers';
+import { App, Home, About, NotFound, StyleScoping, SurveyView } from './containers';
 
 export default (
   <Route path="/" component={App}>
@@ -8,7 +8,7 @@ export default (
     <IndexRoute component={Home} />
 
     { /* routes */ }
-    <Route path="about" component={About} />
+    <Route path="mysurvey" component={SurveyView} />
     <Route path="styles" component={StyleScoping} />
 
     { /* catch all route */ }

@@ -1,0 +1,6 @@
+{
+  "name": "Logo",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./Logo.js"
+}
