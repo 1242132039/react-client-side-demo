@@ -4,11 +4,12 @@
 
 import _ from 'lodash'
 import faker from 'faker'
-import React, { Component } from 'react'
-import { Table, Segment } from 'stardust'
-
-
-const data = _.times(5, n => ({
+import React, {Component} from 'react'
+import {Table, Button, Segment} from 'stardust'
+import {Link} from 'react-router'
+import  SurveyTableView from './SurveyTableView'
+import SurveySearchView from './SurveySearchView'
+const data = _.times(20, n => ({
   name: faker.name.findName(),
   phone: faker.phone.phoneNumber(),
   state: faker.address.state(),
@@ -27,13 +28,22 @@ class SurveyView extends Component {
   };
 
   render() {
-    const { selectedItem, selectedIndex } = this.state
+    const {selectedItem, selectedIndex} = this.state
     return (
       <div>
-        <Table name="aaaaaa" className='selectable' data={data} onSelectRow={this.handleSelectRow}>
-          <Table.Column dataKey='name' />
-          <Table.Column dataKey='phone' />
-          <Table.Column dataKey='state' />
+        <div >
+          <Link className="ui teal button " to="newsurvey"> <i className="icon add"></i> New Survey </Link>
+
+          <SurveySearchView></SurveySearchView>
+
+        </div>
+
+        <SurveyTableView></SurveyTableView>
+
+        <Table name="aaaaaa" className='selectable celled' data={data} onSelectRow={this.handleSelectRow}>
+          <Table.Column dataKey='name'/>
+          <Table.Column dataKey='phone'/>
+          <Table.Column dataKey='state'/>
         </Table>
         <div className="ui secondary segment">
           <div className="ui header ">Selected:</div>

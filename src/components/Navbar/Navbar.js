@@ -1,22 +1,33 @@
 import styles from './Navbar.styl';
 import React, {Component} from 'react';
-
+import cx from 'classnames';
 import {Link} from 'react-router'
 import {Button, Menu, Menuitem} from 'stardust'
 import  Logo from '../Logo'
 
-class Navbar extends Component {
+export default class Navbar extends Component {
+
+
+  color()
+  {
+    return {
+      backgroundColor: '#0067AC',
+    };
+  }
 
   render() {
 
-    return (<div className={styles.navbar}>
-      <Menu className="ui five item menu">
+    
+    console.log("berk",styles.navbar);
+    return (<div>
+      <Menu className="pointing inverted" style={this.color()}>
         <Logo/>
-        <Link className="item"  to="/">Home</Link>
+        <Link className="item " to="/">Home</Link>
         <Link className="item" to="mysurvey">My Survey</Link>
         <Link className="item" to="styles">Style framework</Link>
-        <span >  </span>
-        <Link className="item" to="blog">Login Out</Link>
+        <div className="right menu">
+          <Link className="ui item" to="blog">Login Out</Link>
+        </div>
       </Menu>
     </div>);
 
@@ -24,4 +35,3 @@ class Navbar extends Component {
 
 }
 
-export default Navbar;
