@@ -9,7 +9,7 @@ const history = useRouterHistory(createHashHistory)({ queryKey: false });
 export default class RootComponent extends React.Component {
   render() {
     return (
-      <Router routes={routes} history={history} />
+      <div className="ui container" ><Router routes={routes} history={history} /></div>
     );
   }
 }

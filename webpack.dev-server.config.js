@@ -46,6 +46,9 @@ export default {
       }, {
         test: /\.md$/,
         loader: 'html!markdown'
+      }, {
+        test: /\.json$/,
+        loader: 'json-loader'
       },
 
       {

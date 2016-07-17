@@ -1,4 +1,3 @@
-require('semantic/dist/semantic.css');
 
 import About from './About/About';
 import App from './App/App';

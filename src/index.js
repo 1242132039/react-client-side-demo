@@ -3,6 +3,16 @@ import ReactDOM from 'react-dom';
 import domready from 'domready';
 import RedBox from 'redbox-react';
 
+require('stardust');
+
+// import jQuery from 'jquery';
+// window.jQuery = jQuery;
+//window.$ = jQuery;
+require('semantic/dist/semantic.css');
+require('semantic/dist/semantic.js');
+
+
+                                                                                                                                                                                                                                                                                                                                                                                window.$ = $;
 boot();
 
 function boot() {
@@ -32,6 +42,6 @@ function boot() {
   }
 
   function renderError(error) {
-    ReactDOM.render(<RedBox error={error} />, rootElement);
+    ReactDOM.render(<RedBox error={error}/>, rootElement);
   }
 }
