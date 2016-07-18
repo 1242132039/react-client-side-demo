@@ -6,7 +6,7 @@ import _ from 'lodash'
 import faker from 'faker'
 import React, {Component} from 'react'
 
-import {Table, Button, Dropdown, Icon, Input} from 'stardust'
+import {Table, Select, Button, Menu, Icon, Input, Container} from 'stardust'
 
 import {Link} from 'react-router'
 import  SurveyTableView from './SurveyTableView'
@@ -47,10 +47,9 @@ class SurveyView extends Component {
 
 
   _projectStateCellRendderer(dataItem) {
-    const states = [{value: "0", text: "未发布"}, {value: "1", text: "收集中"}, {value: "2", text: "已停止"}];
+    let states = [{value: "0", text: "未发布"}, {value: "1", text: "收集中"}, {value: "2", text: "已停止"}];
     let initState = dataItem.status;
-    return <Dropdown className="dropdown" selection text={states[initState]["text"]}
-                     options={states}>{states[initState]["text"]}</Dropdown>
+    return <Select focus defaultValue={states[initState].value} options={states}></Select>
 
 
   }
@@ -86,25 +85,19 @@ class SurveyView extends Component {
       <div className="ui container">
 
 
+        <Link className="ui left primary button " to="newsurvey"> <Icon
+          className="add"></Icon>新建</Link>
 
-        <div className="ui grid">
-          <div className="four wide column"><Link className="ui primary button " to="newsurvey"> <Icon
-            className="add"></Icon>新建</Link></div>
 
-          <Link className="four wide column" to="newsurvey"><Button className="primary icon" onClick={this.handleTitileSearch.bind(this)}><Icon
-            className="add"></Icon>新建</Button></Link>
+        <Link className="ui left teal button" to="newsurvey"> <Icon className="add"></Icon> New </Link>
 
-          <div className="four wide column"><Link className="ui teal button " to="newsurvey"> <i
-            className="icon add"></i> New </Link></div>
-          <div className="left four wide column">
-            <Input name="project_seach_key" id="project_seach_key" className='right icon action'
-                   placeholder='input survey name...'>
-              <Button className="primary icon" onClick={this.handleTitileSearch.bind(this)}><Icon
-                className="search"></Icon></Button>
-            </Input>
-          </div>
+        <div className="ui right input">
+          <Input name="project_seach_key" id="project_seach_key" className='right icon action'
+                 placeholder='input survey name...'>
+            <Button className="primary icon" onClick={this.handleTitileSearch.bind(this)}><Icon
+              className="search"></Icon></Button>
+          </Input>
         </div>
-
 
         <SurveyTable className='selectable celled' data={projects.project_list} totalRows={projects.totalPage*5}
                      onSelectRow={this.handleSelectRow}>
@@ -112,7 +105,7 @@ class SurveyView extends Component {
           <Table.Column dataKey='p_type' headerRenderer={()=> "类型"}
                         cellRenderer={this._projectTypeCellRendderer}></Table.Column>
           <Table.Column dataKey='status' headerRenderer={()=> "状态"}
-                        cellRenderer={this._projectStateCellRendderer}></Table.Column>
+                        cellRenderer={this._projectStateCellRendderer.bind(this)}></Table.Column>
           <Table.Column dataKey='rspd_count' headerRenderer={()=> "回收数量"}></Table.Column>
           <Table.Column dataKey="created_time" headerRenderer={()=> "创建时间"}></Table.Column>
           <Table.Column dataKey='time_diff_display' headerRenderer={()=> "编辑时间"}></Table.Column>
@@ -129,4 +122,4 @@ class SurveyView extends Component {
 }
 
 
-export  default SurveyView;
+export default SurveyView;

@@ -20,14 +20,14 @@ gulp.task('serve', () => {
     stats: {
       colors: true
     }
-  }).listen(devServerConfig.port, 'localhost', (err) => {
+  }).listen(devServerConfig.port, devServerConfig.host, (err) => {
     /* eslint-disable no-console */
     if (err) {
       console.log(err);
       return;
     }
 
-    console.log(`Listening at localhost: ${devServerConfig.port}`);
+    console.log(`Listening at ${devServerConfig.host}: ${devServerConfig.port}`);
     /* eslint-enable no-console */
   });
 });

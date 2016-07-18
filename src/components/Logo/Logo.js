@@ -6,21 +6,18 @@ import React, {Component, PropTypes} from 'react';
 
 import {Image, Label} from 'stardust'
 import {Link} from 'react-router'
-import logoUrl from './logo-small.png'
+//import logoUrl from 'http://semantic-ui.com/images/logo.png'
 
 
-class Logo extends Component {
+export default class Logo extends Component {
 
   render() {
 
     return (
-      <Link className="ui header" to="/">
-        <img src={logoUrl} width="100" height="100" alt="FECHOW"/>
+      <Link className="item" to="/">
+        <Image src="http://semantic-ui.com/images/logo.png" width="100" height="44"></Image>
       </Link>
     );
   }
-
-
 }
 
-export  default Logo;

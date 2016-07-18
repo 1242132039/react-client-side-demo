@@ -70,7 +70,7 @@
     "react-router": "^2.0.0",
     "redbox-react": "^1.2.3",
     "semantic-ui":"^2.2.2",
-    "stardust":"^0.21.0",
+    "stardust":"^0.24.1",
     "lodash":"^4.13.1",
     "classnames": "2.2.5",
     "faker":"^3.1.0",

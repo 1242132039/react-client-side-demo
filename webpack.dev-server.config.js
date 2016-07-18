@@ -3,14 +3,16 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const PORT = 3000;
+const HOST = '0.0.0.0';
 const DEBUG = true;
 export default {
   port: PORT,
+  host: HOST||'0.0.0.0',
   devtool: 'eval-source-map',
   entry: [
     './src/index',
     'webpack/hot/dev-server',
-    `webpack-dev-server/client?http://localhost:${PORT}`
+    `webpack-dev-server/client?http://192.168.1.103:${PORT}`
   ],
   output: {
     path: path.join(__dirname, 'dist'),
