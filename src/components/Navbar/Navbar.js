@@ -4,6 +4,8 @@ import cx from 'classnames';
 import {Link} from 'react-router'
 import {Dropdown, Container, Menu, Menuitem, Icon} from 'stardust'
 import  Logo from '../Logo'
+import AccoutDropdown from '../../containers/Account/AccountDropdown'
+
 
 export default class Navbar extends Component {
 
@@ -27,14 +29,16 @@ export default class Navbar extends Component {
             <Logo className="item"/>
           </div>
 
-          <Link className="item" to="/">Home</Link>
-          <Link className="item" to="mysurvey">My Survey</Link>
-          <Link className="item" to="styles">Style framework</Link>
+          <Link className="item" to="/list_survey">My Survey</Link>
+
+          <Link className="item" to="/lib">Template Repos</Link>
+
+          <Link className="item" to="/solution">Solution</Link>
 
           <div className="right menu">
             <Link className="ui item" to="blog"><Icon className="mail"></Icon></Link>
-            <Dropdown></Dropdown>
-            <Link className="ui item" to="blog">Admin</Link>
+
+            <div className="ui item"><AccoutDropdown></AccoutDropdown></div>
           </div>
         </Container>
       </Menu>

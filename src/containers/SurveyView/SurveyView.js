@@ -82,23 +82,25 @@ class SurveyView extends Component {
 
     const {selectedItem, selectedIndex} = this.state
     return (
-      <div className="ui container">
+      <div className="ui  container">
 
+        <div className="ui secondary menu">
+          <div className="left item">
+            <Link className="ui left primary button " to="/new/survey"> <Icon
+              className="add"></Icon>新建</Link>
 
-        <Link className="ui left primary button " to="newsurvey"> <Icon
-          className="add"></Icon>新建</Link>
+          </div>
 
-
-        <Link className="ui left teal button" to="newsurvey"> <Icon className="add"></Icon> New </Link>
-
-        <div className="ui right input">
-          <Input name="project_seach_key" id="project_seach_key" className='right icon action'
-                 placeholder='input survey name...'>
-            <Button className="primary icon" onClick={this.handleTitileSearch.bind(this)}><Icon
-              className="search"></Icon></Button>
-          </Input>
+          <div className="right item">
+            <div className="ui right assigned input">
+              <Input name="project_seach_key" id="project_seach_key" className='right icon action'
+                     placeholder='input survey name...'>
+                <Button className="primary icon" onClick={this.handleTitileSearch.bind(this)}><Icon
+                  className="search"></Icon></Button>
+              </Input>
+            </div>
+          </div>
         </div>
-
         <SurveyTable className='selectable celled' data={projects.project_list} totalRows={projects.totalPage*5}
                      onSelectRow={this.handleSelectRow}>
           <Table.Column dataKey='title' headerRenderer={()=> "标题"}></Table.Column>

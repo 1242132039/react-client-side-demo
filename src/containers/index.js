@@ -1,4 +1,3 @@
-
 import About from './About/About';
 import App from './App/App';
 import Home from './Home/Home';
@@ -8,6 +7,6 @@ import SurveyView from './SurveyView';
 
 import NewSurveyView from './NewSurveyView';
 
+import Main from './Main'
 
-
-export {About, App, Home, NotFound, StyleScoping, SurveyView, NewSurveyView};
+export {Main, About, App, Home, NotFound, StyleScoping, SurveyView, NewSurveyView};
