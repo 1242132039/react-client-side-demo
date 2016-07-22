@@ -1,32 +1,28 @@
 /**
- * Created by fechow on 7/20/16.
+ * Created by fechow on 7/22/16.
  */
 
-
-
-import styles from './Main.styl';
 import React, {Component, PropTypes} from 'react';
 import {Footer, Header, Navbar} from '../../components';
 import {Divider} from 'stardust'
 
-export default class Main extends Component {
+export default class SurveyEditView extends Component {
   static propTypes = {
     children: PropTypes.node
   };
 
   render() {
+    console.log("berk ,survey edit view.");
     return (
       <section id="application">
-
-        <div className={styles.container}>
+        <div >
           <Navbar />
           <Divider className="hidden"></Divider>
-          <div className={styles.content}>
+          <div >
             {this.props.children}
           </div>
         </div>
+      </section> );
 
-      </section>
-    );
   }
 }

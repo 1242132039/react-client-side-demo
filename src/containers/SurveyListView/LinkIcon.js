@@ -22,12 +22,16 @@ export default class LinkIcon extends Component {
   }
 
   componentDidMount() {
-    (this.props.popup) && $('.popup.icon').popup(
+    (this.props.popup) && $('[data-content]').popup(
       {
-        lastResort: 'bottom left',
-        inline: false,
-        bottom:'1px',
-        top:'1px',
+        duration : 0,
+        delay    : {
+          show : 10,
+          hide : 0
+        },
+
+        variation : 'inverted',
+        position  : 'bottom center',
       }
     );
 
@@ -35,11 +39,10 @@ export default class LinkIcon extends Component {
 
   render() {
 
-    let className = cx(this.props.disabled ? "disabled black" : "", 'large', this.props.icon, (!this.props.disabled ) && this.props.popup && "popup");
+    let className = cx(this.props.disabled ? "disabled black" : "", 'large', this.props.icon);
     let onclick = e => e.preventDefault();
     let popText = this.props.disabled ? "" : this.props.popup;
-    return <Link {...this.props} onClick={this.props.disabled&&onclick}> <Icon className={className}
-                                                                               title={popText}></Icon>
+    return <Link {...this.props} onClick={this.props.disabled&&onclick} data-content={popText}> <Icon className={className}     ></Icon>
     </Link>
 
   }

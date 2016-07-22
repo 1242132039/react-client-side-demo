@@ -1,18 +1,15 @@
-import s from './Navbar.styl';
-import React, {Component} from 'react';
-import cx from 'classnames';
-import {Link} from 'react-router'
-import {Dropdown, Container, Menu, Menuitem, Icon} from 'stardust'
-import  Logo from '../Logo'
-import AccoutDropdown from '../../containers/Account/AccountDropdown'
+/**
+ * Created by fechow on 7/22/16.
+ */
 
+import React, {Component} from 'react'
 
-export default class Navbar extends Component {
-
+export default class SurveyEditHeader extends Component {
 
   render() {
+
     return (
-      <Menu className=" inverted attached stackable big">
+      <Menu className="inverted attached stackable big">
         <div className="left menu">
           <Logo className="item"/>
         </div>
@@ -29,13 +26,11 @@ export default class Navbar extends Component {
         <div className="right menu">
           <Link className="ui item" to="blog"><Icon className="mail"></Icon></Link>
 
-          <div className="ui item"><AccoutDropdown></AccoutDropdown></div>
+
         </div>
 
       </Menu>
+
     );
-
   }
-
 }
-

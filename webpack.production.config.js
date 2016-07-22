@@ -29,11 +29,28 @@ export default {
     }, {
       test: /\.md$/,
       loader: 'html!markdown'
-    }]
+    }
+      ,
+      {
+        test: /\.(eot|ttf|wav|mp3)$/,
+        loader: 'file-loader',
+        query: {
+          name: DEBUG ? '[path][name].[ext]?[hash]' : '[hash].[ext]'
+        }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
+      {test: /\.less$/, loader: 'style!css!less'}, {
+        test: /\.jade$/,
+        loader: 'jade-react-loader'
+      }
+    ]
   },
   plugins: [
-    new ExtractTextPlugin('styles.css', { allChunks: false }),
-    new webpack.optimize.UglifyJsPlugin({ minimize: true }),
-    new HtmlWebpackPlugin({ template: 'src/index.html', inject: 'body' })
+    new ExtractTextPlugin('styles.css', {allChunks: false}),
+    new webpack.optimize.UglifyJsPlugin({minimize: true}),
+    new HtmlWebpackPlugin({template: 'src/index.html', inject: 'body'})
   ]
 };

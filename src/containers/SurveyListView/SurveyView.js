@@ -86,7 +86,7 @@ class SurveyView extends Component {
 
         <div className="ui secondary menu">
           <div className="left item">
-            <Link className="ui left primary button " to="/new/survey"> <Icon
+            <Link className="ui left primary button " to="/survey/new"> <Icon
               className="add"></Icon>新建</Link>
 
           </div>

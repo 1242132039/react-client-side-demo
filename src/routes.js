@@ -1,17 +1,15 @@
 import React from 'react';
-import { IndexRoute, Route } from 'react-router';
-import { App, Home, About, NotFound, StyleScoping, SurveyView ,NewSurveyView} from './containers';
+import {IndexRedirect, IndexRoute, Route} from 'react-router';
+import {Main, App, Home, About, NotFound, StyleScoping, SurveyView, NewSurveyView, SurveyEditView} from './containers';
 
 export default (
   <Route path="/" component={App}>
-    { /* main route */ }
-    <IndexRoute component={Home} />
-
-    { /* routes */ }
-    <Route path="mysurvey" component={SurveyView} />
-    <Route path="styles" component={StyleScoping} />
-    <Route path="newsurvey" component ={NewSurveyView} />
-    { /* catch all route */ }
-    <Route path="*" component={NotFound} />
+    <IndexRedirect to="/list_survey"/>
+    <Route path="/list_survey" component={Main}>
+      <IndexRoute component={SurveyView}/>
+      <Route path="/lib" component={Home}/>
+      <Route path="/solution" component={StyleScoping}/>
+    </Route>
+    <Route path="/survey/new" component={SurveyEditView}/>
   </Route>
 );

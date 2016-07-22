@@ -26,11 +26,6 @@ export default {
       include: path.join(__dirname, 'src')
     },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      },
-      {test: /\.less$/, loader: 'style!css!less'},
-      {
         test: /\.styl$/,
         /* eslint-disable max-len */
         //loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus-loader'
@@ -42,9 +37,6 @@ export default {
       }, {
         test: /\.png$/,
         loader: 'file-loader?name=images/[name].[ext]?[hash]'
-      }, {
-        test: /\.jade$/,
-        loader: 'jade-react-loader'
       }, {
         test: /\.md$/,
         loader: 'html!markdown'
@@ -67,6 +59,14 @@ export default {
         query: {
           name: DEBUG ? '[path][name].[ext]?[hash]' : '[hash].[ext]'
         }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
+      {test: /\.less$/, loader: 'style!css!less'}, {
+        test: /\.jade$/,
+        loader: 'jade-react-loader'
       }
     ]
   },

@@ -1,15 +1,20 @@
+require('stardust');
+
+require('semantic/dist/semantic.js');
+
+require('semantic/dist/semantic.css');
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import domready from 'domready';
 import RedBox from 'redbox-react';
 
-require('stardust');
+
 
 // import jQuery from 'jquery';
 // window.jQuery = jQuery;
 //window.$ = jQuery;
-require('semantic/dist/semantic.css');
-require('semantic/dist/semantic.js');
+
 
 
                                                                                                                                                                                                                                                                                                                                                                                 window.$ = $;
